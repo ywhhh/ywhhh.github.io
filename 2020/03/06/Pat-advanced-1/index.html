@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Ywhhh`s Blog</title>
+  <title>PAT甲级(Java)-Day1 | Ywhhh`s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Ywhhh`s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="音乐: Let Me Down Slowly (Acoustic)  你的浏览器不支持audio！    1001 . A+B Format使用Java自带格式化输出即可">
+<meta name="keywords" content="Java,PAT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAT甲级(Java)-Day1">
+<meta property="og:url" content="http://yoursite.com/2020/03/06/Pat-advanced-1/index.html">
 <meta property="og:site_name" content="Ywhhh`s Blog">
+<meta property="og:description" content="音乐: Let Me Down Slowly (Acoustic)  你的浏览器不支持audio！    1001 . A+B Format使用Java自带格式化输出即可">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-05T16:42:39.161Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ywhhh`s Blog">
+<meta name="twitter:title" content="PAT甲级(Java)-Day1">
+<meta name="twitter:description" content="音乐: Let Me Down Slowly (Acoustic)  你的浏览器不支持audio！    1001 . A+B Format使用Java自带格式化输出即可">
   
     <link rel="alternative" href="/atom.xml" title="Ywhhh`s Blog" type="application/atom+xml">
   
@@ -152,36 +157,126 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Pat-advanced-1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/06/Pat-advanced-1/" class="archive-article-date">
-  	<time datetime="2020-03-05T16:06:53.086Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/06/Pat-advanced-1/">PAT甲级(Java)-Day1</a>
+    <h1 class="article-title" itemprop="name">
+      PAT甲级(Java)-Day1
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/03/06/Pat-advanced-1/" class="archive-article-date">
+  	<time datetime="2020-03-05T16:06:53.086Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="音乐-Let-Me-Down-Slowly-Acoustic"><a href="#音乐-Let-Me-Down-Slowly-Acoustic" class="headerlink" title="音乐: Let Me Down Slowly (Acoustic)"></a>音乐: Let Me Down Slowly (Acoustic)</h2><audio controls loop="loop">
+<source src="https://link.hhtjim.com/163/1313591404.mp3" type="audio/mpeg">
+你的浏览器不支持audio！
+</audio>
+
+<hr>
+<h2 id="1001-A-B-Format"><a href="#1001-A-B-Format" class="headerlink" title="1001 . A+B Format"></a>1001 . A+B Format</h2><p>使用Java自带格式化输出即可</p>
+<a id="more"></a>
+
+<pre><code class="java">import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int A=in.nextInt();
+        int B=in.nextInt();
+        in.close();
+        System.out.printf(&quot;%,d&quot;,A+B);
+    }
+}</code></pre>
+<hr>
+<h2 id="1002-A-B-for-Polynomials"><a href="#1002-A-B-for-Polynomials" class="headerlink" title="1002. A+B for Polynomials"></a>1002. A+B for Polynomials</h2><h3 id="–注意事项"><a href="#–注意事项" class="headerlink" title="–注意事项"></a>–注意事项</h3><ol>
+<li>去除系数为零的项  </li>
+<li>保留一位小数</li>
+</ol>
+<h3 id="–错误原因"><a href="#–错误原因" class="headerlink" title="–错误原因"></a>–错误原因</h3><p>在输出时去除零系数项,而忘记更改多项式项数 </p>
+<h3 id="–知识总结"><a href="#–知识总结" class="headerlink" title="–知识总结"></a>–知识总结</h3><ol>
+<li><p>map按value条件删除元素(java 8)</p>
+<pre><code class="java"> // 根据map中得值去判断删除
+ map.values().removeIf(value -&gt; !value.contains(&quot;1&quot;));
+ // 根据key删除
+ map.keySet().removeIf(key -&gt; key != 1);
+ //通过getkey()方法获得值去删除
+ map.entrySet().removeIf(entry -&gt; entry.getKey() != 1);</code></pre>
+</li>
+<li><p>map排序</p>
+<p> 默认降序,下面代码是升序</p>
+<pre><code class="java"> Map&lt;Integer,Double&gt; map=new TreeMap&lt;Integer , Double&gt;(
+             new Comparator&lt;Integer&gt;() {
+                 public int compare(Integer a,Integer b){
+                     return b.compareTo(a);
+                 }
+             }
+         );</code></pre>
+</li>
+<li><p>遍历map</p>
+<pre><code class="java"> Iterator&lt;Entry&lt;Integer,Double&gt;&gt; iter =map.entrySet().iterator();
+ while(iter.hasNext()){
+     Entry&lt;Integer,Double&gt; entry=(Entry&lt;Integer,Double&gt;)iter.next();
+     System.out.printf(&quot; %d %.1f&quot;,entry.getKey(),entry.getValue());
+ }</code></pre>
+</li>
+</ol>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><pre><code class="java">import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+import java.util.Map.Entry;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int num1=in.nextInt();
+        Map&lt;Integer,Double&gt; map=new TreeMap&lt;Integer , Double&gt;(
+            new Comparator&lt;Integer&gt;() {
+                public int compare(Integer a,Integer b){
+                    return b.compareTo(a);
+                }
+            }
+        );
+        for(int i=0;i&lt;num1;i++){
+            map.put(in.nextInt(), in.nextDouble());
+        }
+        int num2=in.nextInt();
+        for(int i=0;i&lt;num2;i++){
+            int x=in.nextInt();
+            if(map.containsKey(x)) map.put(x,map.get(x)+in.nextDouble());
+            else map.put(x, in.nextDouble());
+        }
+        in.close();  
+        map.values().removeIf(value -&gt; Math.abs(value)&lt;0.0000001);
+        System.out.print(map.size());
+        Iterator&lt;Entry&lt;Integer,Double&gt;&gt; iter =map.entrySet().iterator();
+        while(iter.hasNext()){
+            Entry&lt;Integer,Double&gt; entry=(Entry&lt;Integer,Double&gt;)iter.next();
+            System.out.printf(&quot; %d %.1f&quot;,entry.getKey(),entry.getValue());
+        }
+    }
+}</code></pre>
+
+      
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,57 +292,68 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/05/种树/" class="archive-article-date">
-  	<time datetime="2020-03-05T11:35:29.747Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/05/种树/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">种树</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/种树/">种树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#音乐-Let-Me-Down-Slowly-Acoustic"><span class="toc-number">1.</span> <span class="toc-text">音乐: Let Me Down Slowly (Acoustic)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1001-A-B-Format"><span class="toc-number">2.</span> <span class="toc-text">1001 . A+B Format</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1002-A-B-for-Polynomials"><span class="toc-number">3.</span> <span class="toc-text">1002. A+B for Polynomials</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–注意事项"><span class="toc-number">3.1.</span> <span class="toc-text">–注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–错误原因"><span class="toc-number">3.2.</span> <span class="toc-text">–错误原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–知识总结"><span class="toc-number">3.3.</span> <span class="toc-text">–知识总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完整代码"><span class="toc-number">3.4.</span> <span class="toc-text">完整代码</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -270,8 +376,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
