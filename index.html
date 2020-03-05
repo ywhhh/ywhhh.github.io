@@ -174,49 +174,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<br>
-
-<h3 id="音乐-Let-Me-Down-Slowly-Acoustic"><a href="#音乐-Let-Me-Down-Slowly-Acoustic" class="headerlink" title="音乐: Let Me Down Slowly (Acoustic)"></a>音乐: Let Me Down Slowly (Acoustic)</h3><audio controls loop="loop">
-<source src="https://link.hhtjim.com/163/1313591404.mp3" type="audio/mpeg">
-你的浏览器不支持audio！
-</audio>
-
-<hr>
-<br>
-
-<h3 id="1001-A-B-Format"><a href="#1001-A-B-Format" class="headerlink" title="1001 . A+B Format"></a>1001 . A+B Format</h3><p>使用Java自带格式化输出即可</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> A=in.nextInt();</span><br><span class="line">        <span class="keyword">int</span> B=in.nextInt();</span><br><span class="line">        in.close();</span><br><span class="line">        System.out.printf(<span class="string">"%,d"</span>,A+B);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<br>
-
-<h3 id="1002-A-B-for-Polynomials"><a href="#1002-A-B-for-Polynomials" class="headerlink" title="1002. A+B for Polynomials"></a>1002. A+B for Polynomials</h3><h4 id="–注意事项"><a href="#–注意事项" class="headerlink" title="–注意事项"></a>–注意事项</h4><ol>
-<li>去除系数为零的项  </li>
-<li>保留一位小数</li>
-</ol>
-<h4 id="–错误原因"><a href="#–错误原因" class="headerlink" title="–错误原因"></a>–错误原因</h4><p>在输出时去除零系数项,而忘记更改多项式项数</p>
-<h4 id="–知识总结"><a href="#–知识总结" class="headerlink" title="–知识总结"></a>–知识总结</h4><ul>
-<li>map按value条件删除元素(java 8)</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据map中得值去判断删除</span></span><br><span class="line">map.values().removeIf(value -&gt; !value.contains(<span class="string">"1"</span>));</span><br><span class="line"><span class="comment">// 根据key删除</span></span><br><span class="line">map.keySet().removeIf(key -&gt; key != <span class="number">1</span>);</span><br><span class="line"><span class="comment">//通过getkey()方法获得值去删除</span></span><br><span class="line">map.entrySet().removeIf(entry -&gt; entry.getKey() != <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>map排序<br>  默认降序,下面代码是升序</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer,Double&gt; map=<span class="keyword">new</span> TreeMap&lt;Integer , Double&gt;(</span><br><span class="line">            <span class="keyword">new</span> Comparator&lt;Integer&gt;() &#123;</span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer a,Integer b)</span></span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> b.compareTo(a);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>遍历map</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Entry&lt;Integer,Double&gt;&gt; iter =map.entrySet().iterator();</span><br><span class="line"><span class="keyword">while</span>(iter.hasNext())&#123;</span><br><span class="line">    Entry&lt;Integer,Double&gt; entry=(Entry&lt;Integer,Double&gt;)iter.next();</span><br><span class="line">    System.out.printf(<span class="string">" %d %.1f"</span>,entry.getKey(),entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<br>
-
-<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map.Entry;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> num1=in.nextInt();</span><br><span class="line">        Map&lt;Integer,Double&gt; map=<span class="keyword">new</span> TreeMap&lt;Integer , Double&gt;(</span><br><span class="line">            <span class="keyword">new</span> Comparator&lt;Integer&gt;() &#123;</span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer a,Integer b)</span></span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> b.compareTo(a);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num1;i++)&#123;</span><br><span class="line">            map.put(in.nextInt(), in.nextDouble());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> num2=in.nextInt();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num2;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x=in.nextInt();</span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(x)) map.put(x,map.get(x)+in.nextDouble());</span><br><span class="line">            <span class="keyword">else</span> map.put(x, in.nextDouble());</span><br><span class="line">        &#125;</span><br><span class="line">        in.close();  </span><br><span class="line">        map.values().removeIf(value -&gt; Math.abs(value)&lt;<span class="number">0.0000001</span>);</span><br><span class="line">        System.out.print(map.size());</span><br><span class="line">        Iterator&lt;Entry&lt;Integer,Double&gt;&gt; iter =map.entrySet().iterator();</span><br><span class="line">        <span class="keyword">while</span>(iter.hasNext())&#123;</span><br><span class="line">            Entry&lt;Integer,Double&gt; entry=(Entry&lt;Integer,Double&gt;)iter.next();</span><br><span class="line">            System.out.printf(<span class="string">" %d %.1f"</span>,entry.getKey(),entry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        <p>不积跬步无以至千里</p>
+        
       
       
       
