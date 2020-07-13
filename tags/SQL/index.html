@@ -6,22 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode刷题总结-Floyd判环算法 | Ywhhh`s Blog</title>
+  <title>Tag: SQL | Ywhhh`s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LeetCode刷题过程中，学到的一种判断环的长度和起始点的方法。">
-<meta name="keywords" content="Java,LeetCode,算法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode刷题总结-Floyd判环算法">
-<meta property="og:url" content="http://yoursite.com/2020/05/26/龟兔赛跑算法/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Ywhhh`s Blog">
+<meta property="og:url" content="http://yoursite.com/tags/SQL/index.html">
 <meta property="og:site_name" content="Ywhhh`s Blog">
-<meta property="og:description" content="LeetCode刷题过程中，学到的一种判断环的长度和起始点的方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ywhhh.github.io/assets/img/floyd-1.png">
-<meta property="og:updated_time" content="2020-05-26T13:31:12.864Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode刷题总结-Floyd判环算法">
-<meta name="twitter:description" content="LeetCode刷题过程中，学到的一种判断环的长度和起始点的方法。">
-<meta name="twitter:image" content="https://ywhhh.github.io/assets/img/floyd-1.png">
+<meta name="twitter:title" content="Ywhhh`s Blog">
   
     <link rel="alternative" href="/atom.xml" title="Ywhhh`s Blog" type="application/atom+xml">
   
@@ -159,142 +152,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-龟兔赛跑算法" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      LeetCode刷题总结-Floyd判环算法
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/07/13/mysql-随机生成数据并插入/" class="archive-article-date">
+  	<time datetime="2020-07-13T08:46:07.088Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/07/13/mysql-随机生成数据并插入/">MYSQL学习笔记-随机生成数据</a>
     </h1>
   
 
-        
-        <a href="/2020/05/26/龟兔赛跑算法/" class="archive-article-date">
-  	<time datetime="2020-05-26T12:28:29.532Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>LeetCode刷题过程中，学到的一种判断环的长度和起始点的方法。</p>
-<a id="more"></a>
-
-<p>音乐: Brother</p>
-<audio controls loop="loop">
-<source src="https://link.hhtjim.com/163/485960410.mp3" type="audio/mpeg">
-你的浏览器不支持audio！
-</audio>
-
-<hr>
-<br>
-
-<p><img src="https://ywhhh.github.io/assets/img/floyd-1.png" alt="https://ywhhh.github.io/assets/img/floyd-1.png"><br>两个指针m，n分别以速度1，2从A开始、移动。D是两指针第一次交汇的点。<br>令快的指针原地不动，慢的指针再跑一圈，就可以得到环的长度。<br><br><br>设环的长度为x，则2t-t=x 即t=x，因此AB+BD的长度等于环的长度，从而DB的长度等于AB。<br>要得到环起始点的位置，可以将两个指针分别放在起点A和交汇点D，以相同的速度开始移动，即向着AB，DB方向移动，最终在B点相遇，也就是环的起始点。<br><br><br>这种算法的时间复杂度为O(n),空间复杂度仅O(1)。<br><br><br>具体用例可以参考leetcode 287，141，142。<br><br><br>此处附上287题的代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> slow=nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> fast=nums[nums[<span class="number">0</span>]];</span><br><span class="line">        <span class="keyword">while</span>(slow!=fast)&#123;</span><br><span class="line">            slow=nums[slow];</span><br><span class="line">            fast=nums[nums[fast]];</span><br><span class="line">        &#125;</span><br><span class="line">        slow=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(slow!=fast)&#123;</span><br><span class="line">            slow=nums[slow];</span><br><span class="line">            fast=nums[fast];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fast;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/07/13/mysql-随机生成数据并插入/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          MYSQL学习笔记-随机生成数据
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/03/06/Pat-advanced-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PAT甲级(Java)-Day1</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    目录，不存在的…
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -317,9 +232,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

@@ -6,22 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode刷题总结-Floyd判环算法 | Ywhhh`s Blog</title>
+  <title>MYSQL学习笔记-随机生成数据 | Ywhhh`s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LeetCode刷题过程中，学到的一种判断环的长度和起始点的方法。">
-<meta name="keywords" content="Java,LeetCode,算法">
+  <meta name="description" content="“今天不想跑,所以才去跑,这才是长距离跑者的思维方式” –村上春树     做数据库课程实验的时候，需要自己灌数据，下面展示了如何随机生成并插入顾客的国籍信息。">
+<meta name="keywords" content="SQL,数据库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode刷题总结-Floyd判环算法">
-<meta property="og:url" content="http://yoursite.com/2020/05/26/龟兔赛跑算法/index.html">
+<meta property="og:title" content="MYSQL学习笔记-随机生成数据">
+<meta property="og:url" content="http://yoursite.com/2020/07/13/mysql-随机生成数据并插入/index.html">
 <meta property="og:site_name" content="Ywhhh`s Blog">
-<meta property="og:description" content="LeetCode刷题过程中，学到的一种判断环的长度和起始点的方法。">
+<meta property="og:description" content="“今天不想跑,所以才去跑,这才是长距离跑者的思维方式” –村上春树     做数据库课程实验的时候，需要自己灌数据，下面展示了如何随机生成并插入顾客的国籍信息。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ywhhh.github.io/assets/img/floyd-1.png">
-<meta property="og:updated_time" content="2020-05-26T13:31:12.864Z">
+<meta property="og:image" content="https://ywhhh.github.io/assets/img/Nation%E8%A1%A8%E4%BF%A1%E6%81%AF.png">
+<meta property="og:image" content="https://ywhhh.github.io/assets/img/Customer%E8%A1%A8%E4%BF%A1%E6%81%AF.png">
+<meta property="og:updated_time" content="2020-07-13T09:19:09.743Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode刷题总结-Floyd判环算法">
-<meta name="twitter:description" content="LeetCode刷题过程中，学到的一种判断环的长度和起始点的方法。">
-<meta name="twitter:image" content="https://ywhhh.github.io/assets/img/floyd-1.png">
+<meta name="twitter:title" content="MYSQL学习笔记-随机生成数据">
+<meta name="twitter:description" content="“今天不想跑,所以才去跑,这才是长距离跑者的思维方式” –村上春树     做数据库课程实验的时候，需要自己灌数据，下面展示了如何随机生成并插入顾客的国籍信息。">
+<meta name="twitter:image" content="https://ywhhh.github.io/assets/img/Nation%E8%A1%A8%E4%BF%A1%E6%81%AF.png">
   
     <link rel="alternative" href="/atom.xml" title="Ywhhh`s Blog" type="application/atom+xml">
   
@@ -159,40 +160,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-龟兔赛跑算法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-mysql-随机生成数据并插入" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode刷题总结-Floyd判环算法
+      MYSQL学习笔记-随机生成数据
     </h1>
   
 
         
-        <a href="/2020/05/26/龟兔赛跑算法/" class="archive-article-date">
-  	<time datetime="2020-05-26T12:28:29.532Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
+        <a href="/2020/07/13/mysql-随机生成数据并插入/" class="archive-article-date">
+  	<time datetime="2020-07-13T08:46:07.088Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>LeetCode刷题过程中，学到的一种判断环的长度和起始点的方法。</p>
+        <blockquote>
+<p>“今天不想跑,所以才去跑,这才是长距离跑者的思维方式” –村上春树  </p>
+</blockquote>
+<hr>
+<p>做数据库课程实验的时候，需要自己灌数据，下面展示了如何随机生成并插入顾客的国籍信息。</p>
 <a id="more"></a>
 
-<p>音乐: Brother</p>
-<audio controls loop="loop">
-<source src="https://link.hhtjim.com/163/485960410.mp3" type="audio/mpeg">
-你的浏览器不支持audio！
-</audio>
-
-<hr>
 <br>
 
-<p><img src="https://ywhhh.github.io/assets/img/floyd-1.png" alt="https://ywhhh.github.io/assets/img/floyd-1.png"><br>两个指针m，n分别以速度1，2从A开始、移动。D是两指针第一次交汇的点。<br>令快的指针原地不动，慢的指针再跑一圈，就可以得到环的长度。<br><br><br>设环的长度为x，则2t-t=x 即t=x，因此AB+BD的长度等于环的长度，从而DB的长度等于AB。<br>要得到环起始点的位置，可以将两个指针分别放在起点A和交汇点D，以相同的速度开始移动，即向着AB，DB方向移动，最终在B点相遇，也就是环的起始点。<br><br><br>这种算法的时间复杂度为O(n),空间复杂度仅O(1)。<br><br><br>具体用例可以参考leetcode 287，141，142。<br><br><br>此处附上287题的代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> slow=nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> fast=nums[nums[<span class="number">0</span>]];</span><br><span class="line">        <span class="keyword">while</span>(slow!=fast)&#123;</span><br><span class="line">            slow=nums[slow];</span><br><span class="line">            fast=nums[nums[fast]];</span><br><span class="line">        &#125;</span><br><span class="line">        slow=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(slow!=fast)&#123;</span><br><span class="line">            slow=nums[slow];</span><br><span class="line">            fast=nums[fast];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fast;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="结构信息"><a href="#结构信息" class="headerlink" title="结构信息"></a>结构信息</h2><p>Nation表结构和信息如下<br><img src="https://ywhhh.github.io/assets/img/Nation%E8%A1%A8%E4%BF%A1%E6%81%AF.png" alt="https://ywhhh.github.io/assets/img/Nation表信息.png">  </p>
+<hr>
+<p>Customer表结构和信息如下<br><img src="https://ywhhh.github.io/assets/img/Customer%E8%A1%A8%E4%BF%A1%E6%81%AF.png" alt="https://ywhhh.github.io/assets/img/Customer表信息.png">  </p>
+<br>
+
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">delimiter ;;#修改结束标志为两个分号</span><br><span class="line">create procedure genNation()</span><br><span class="line">    begin</span><br><span class="line">        declare cust  int;</span><br><span class="line">        #声明游标结束标志</span><br><span class="line">        declare done int default 0;</span><br><span class="line">        #声明游标</span><br><span class="line">        declare cur cursor for select custkey from customer;</span><br><span class="line">        #当游标结束时设置done为1</span><br><span class="line">        declare continue handler for not found set done =1;</span><br><span class="line">        open cur;</span><br><span class="line">        xxx:loop</span><br><span class="line">            fetch cur into cust;</span><br><span class="line">            if done=1 then</span><br><span class="line">                leave xxx;</span><br><span class="line">            end if;</span><br><span class="line">            update customer set nationkey=  </span><br><span class="line">                (select nationkey from nation  </span><br><span class="line">                where nationkey&gt;</span><br><span class="line">                    (select floor(rand()*</span><br><span class="line">                    (select count(*) from nation)</span><br><span class="line">                    )) limit 1)  </span><br><span class="line">            where custkey=cust;</span><br><span class="line">        end loop;</span><br><span class="line">        close cur;</span><br><span class="line">    end;;</span><br><span class="line"></span><br><span class="line">delimiter ;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -210,15 +212,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
         		</li>
       		
 		</ul>
@@ -237,18 +235,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/13/mysql-随机生成数据并插入/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          MYSQL学习笔记-随机生成数据
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/06/Pat-advanced-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PAT甲级(Java)-Day1</div>
+    <a href="/2020/05/26/龟兔赛跑算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode刷题总结-Floyd判环算法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -275,7 +264,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#结构信息"><span class="toc-number">1.</span> <span class="toc-text">结构信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完整代码"><span class="toc-number">2.</span> <span class="toc-text">完整代码</span></a></li></ol>
                     </div>
                 </span>
             </div>
